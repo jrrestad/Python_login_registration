@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex justify-content-center border-bottom p-3">
+        <h1 class="text-align-center">Welcome to Login and Registration</h1>
+    </div>
+    <div class="bg-light d-flex justify-content-between">
+        <div class="container d-flex justify-content-between my-5" style="height:700px">
+
+            <form
+            class="col-5 border p-5 rounded shadow bg-white"
+            action="/process_registration" 
+            method="post">
+            {% csrf_token %}
+            <h1 class="">Sign up!</h1>
+            <label class="text-muted" for="firstName">First name</label>
+            <input class="form-control" type="text" name="firstName">
+            
+            <label class="text-muted" for="lastName">Last name</label>
+            <input class="form-control" type="text" name="lastName">
+            
+            <label class="text-muted" for="email">Email address</label>
+            <input class="form-control" type="text" name="email">
+            
+            <label class="text-muted" for="password">Password</label>
+            <input class="form-control" type="password" name="password">
+            
+            <label class="text-muted" for="confirmPassword">Confirm password</label>
+            <input class="form-control" type="password" name="confirmPassword">
+            
+            <button class="form-control btn-primary mt-4" type="submit">Register</button>
+            </form>
+            <form
+            class="col-5 border p-5 rounded shadow bg-white"
+            action="/process_login" 
+            method="post">
+            {% csrf_token %}
+            <h1 class="">Sign in!</h1>
+            <label class="text-muted" for="email">Email address</label>
+            <input class="form-control" type="text" name="email">
+            
+            <label class="text-muted" for="password">Password</label>
+            <input class="form-control" type="password" name="password">
+            
+            <button class="form-control btn-primary mt-4" type="submit">Login</button>
+        </form>
+    </div>
+</div>
+<div class="footer d-flex justify-content-center border p-3">
+    <h1>This is a footer</h1>
+</div>
+</body>
+</html>
