@@ -56,3 +56,7 @@ def dashboard(request):
             'user': User.objects.get(id=request.session['userId'])
         }
         return render(request, 'dashboard.html', context)
+
+def endSession(request):
+    del request.session['userId']
+    return redirect('/')
